@@ -1,0 +1,97 @@
+import EmployeeClass as e
+import PayrollDeductionClass as d
+
+
+def main():
+    # Get the phone data.
+
+
+    name = 'Jimmy Smith'
+    idnum = 58475
+    department = 'Information Systems '
+    title = 'Developer'
+    salary = 6800
+    
+    #Deduction 1
+    desc1 = 'food court	'
+    date1 = '8/14/2022	'
+    chargeamt1 = 22.50	
+    employee_ID1 = 39119
+
+    #Deduction 2
+    desc2 = 'gift contribution	'
+    date2 = '8/12/2022	'
+    chargeamt2 = 25.00	
+    employee_ID2 = 58475
+    
+    #Deduction 3
+    desc3 = 'food court'
+    date3 = '8/17/2022'
+    chargeamt3 = 15.25
+    employee_ID3 = 21547
+
+    #Deduction 4
+    desc4 = 'vending machine'
+    date4 = '8/22/2022'
+    chargeamt4 = 3.00
+    employee_ID4 = 58475
+    
+    #Deduction 5
+    desc5 = 'vending machine'
+    date5 = '8/5/2022'
+    chargeamt5 = 2.75
+    employee_ID5 = 58475
+
+
+    # print()
+    # while deduction_loop == 'y':
+    #     print('** Payroll Deductions **')
+    #     desc = input('Enter a description for the deduction: ')
+    #     date = input('Enter the date of the deduction (00/00/0000): ')
+    #     chargeamt = input('Enter the amount of the deduction: ')
+    #     employee_ID = input("Enter the employee's ID number: ")
+    #     deduction_loop = input('Do you want to enter another deduction (y/n)? ').lower()
+    chargeamt = 0
+
+    if employee_ID1 == idnum:
+        chargeamt += chargeamt1
+    
+    if employee_ID2 == idnum:
+        chargeamt += chargeamt2
+
+    if employee_ID3 == idnum:
+        chargeamt += chargeamt3
+    
+    if employee_ID4 == idnum:
+        chargeamt += chargeamt4
+    
+    if employee_ID5 == idnum:
+        chargeamt += chargeamt5
+
+
+    
+    employee = e.Employee(name, idnum, department, title, salary)
+    deduction1 = d.Deduction(desc1, date1, chargeamt1, employee_ID1)
+    deduction2 = d.Deduction(desc2, date2, chargeamt2, employee_ID2)
+    deduction3 = d.Deduction(desc3, date3, chargeamt3, employee_ID3)
+    deduction4 = d.Deduction(desc4, date4, chargeamt4, employee_ID4)
+    deduction5 = d.Deduction(desc5, date5, chargeamt5, employee_ID5)
+
+
+    # if d.get_idnum() == idnum:
+    #     chargeamt =+ d.get_chargeamt()
+
+   # Display the data that was entered.
+    print('')
+    print('** Employee Pay **')
+    print('Name: ', employee.get_name())
+    print('ID Number:', employee.get_idnum())
+    print('Department:', employee.get_department())
+    print('Gross Pay:', employee.get_msalary())
+    print('Net Pay:', employee.get_msalary() - chargeamt)
+    print()
+
+
+
+# Call the main function.
+main()
